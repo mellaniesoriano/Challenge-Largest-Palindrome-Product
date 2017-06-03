@@ -13,17 +13,17 @@ module.exports = function(digits){
 
   var numPlaces = [9, 99, 999, 9999, 99999];
   var max = numPlaces[digits - 1];
+  console.log('check... ', numPlaces[digits - 1]);
+  // console.log('max...', max);
 
   // do your work here
 
   function isPalindrome(num) {
-    num = num.toString().split('');
-    for ( var i = 0; i < num.length / 2; i++ ) {
-      if ( num[i] !== num[num.length - 1 - i] ) {
-        return false;
-      }
+    if ( num.toString() === num.toString().split('').reverse().join('') ) {
+      return true;
+    } else {
+      return false;
     }
-    return true;
   }
   console.log(isPalindrome(9009));
 
@@ -38,11 +38,11 @@ module.exports = function(digits){
         if ( isPalindrome(product) ) {
           if ( product > palindromeNumber ) {
           palindromeNumber = product;
-          console.log(isPalindrome(product));
+          // console.log(isPalindrome(product));
         }
       }
     }
-      console.log(factor_0 + ' x ' + factor_1 + ' = ' + product);
+      // console.log(factor_0 + ' x ' + factor_1 + ' = ' + product);
     }
   }
   largestPalNum();
